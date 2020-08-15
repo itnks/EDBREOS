@@ -1,0 +1,26 @@
+﻿
+
+@model IEnumerable<EDBREOS.Models.Projects>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+    <div class="card" >
+        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Logo)" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+
+        </div>
+        <a href="/Project/Details/@item.Id" class="btn btn-primary">Find Data</a>
+    </div>
+    }
+    </div>
